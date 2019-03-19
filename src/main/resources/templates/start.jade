@@ -1,0 +1,10 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    title Title
+.container-fluid
+    .row
+        form(action='/payment' method='POST')
+            //input(type='number')
+            script(src='https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js' data-public-key='TEST-fa5a1cf8-301c-4f18-b212-8a9844120feb' data-transaction-amount='100.00')
