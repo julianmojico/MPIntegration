@@ -14,7 +14,8 @@ public class Main {
         Spark.staticFiles.location("/public");
 
         try {
-            MPService.configBasicCheckout();
+            //MPService.configBasicCheckout();
+            MPService.configCustomCheckout();
         } catch (MPException e) {
             e.printStackTrace();
         }

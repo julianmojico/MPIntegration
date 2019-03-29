@@ -4,8 +4,7 @@ import com.mercadopago.MercadoPago;
 import com.mercadopago.exceptions.MPException;
 import com.mercadopago.resources.Payment;
 import com.mercadopago.resources.datastructures.payment.Payer;
-import controllers.PaymentController;
-import org.slf4j.spi.SLF4JServiceProvider;
+import models.PaymentDTO;
 
 public class MPService {
     private static MPService ourInstance = new MPService();
@@ -17,15 +16,16 @@ public class MPService {
     private MPService() {
     }
 
-    public Payment createPayment(String body){
+    public Payment createCardPayment(PaymentDTO paymentDto){
 
         Payment payment = new Payment()
-                .setTransactionAmount(100f)
-                .setToken("your_cardtoken")
-                .setDescription("description")
-                .setInstallments(1)
-                .setPaymentMethodId("visa")
-                .setPayer(new Payer().setEmail("dummy_email"));
+                .setTransactionAmount(paymentDto.getAmount())
+                .setToken(paymentDto.getToken())
+                .setIssuerId(paymentDto.getIssuerId())
+                .setDescription(paymentDto.getDescription())
+                .setInstallments(paymentDto.getInstallments())
+                .setPaymentMethodId(paymentDto.getPaymentMethodId())
+                .setPayer(new Payer().setEmail(paymentDto.getEmail()));
         return payment;
 
     }
@@ -48,7 +48,7 @@ public class MPService {
     }
 
     public static void configCustomCheckout() throws MPException  {
-        MercadoPago.SDK.setAccessToken("ACCESS_TOKEN");
+        MercadoPago.SDK.setAccessToken("TEST-1623876840559160-032611-4ac39bb37585d10193666c384a4a0ee6-420008877");
     }
 
 }

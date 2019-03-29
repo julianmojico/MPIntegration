@@ -8,6 +8,8 @@ import spark.RouteGroup;
 import spark.Spark;
 import spark.template.jade.JadeTemplateEngine;
 
+import static spark.Spark.path;
+
 public class RoutesHandler implements RouteGroup {
 
     JsonTransformer jsonTransformer = new JsonTransformer();
@@ -19,9 +21,21 @@ public class RoutesHandler implements RouteGroup {
     @Override
     public void addRoutes() {
 
-        Spark.post("/preference", "application/json", preferencesController::createPref);
-        Spark.get("/", viewController::handle , new JadeTemplateEngine());
-        Spark.post("/payment", paymentController::processPayment, jsonTransformer);
-//        Spark.exception();
+        path("/front", () -> {
+            Spark.get("/mpflow", viewController::handle, new JadeTemplateEngine());
+            Spark.get("/payflow", viewController::payflow, new JadeTemplateEngine());
+            Spark.post("/payment", viewController::doPayment, new JadeTemplateEngine());
+//            Spark.get("/mpflow", viewController::handle);
+//            Spark.get("/payflow", viewController::payflow);
+
+        });
+
+        path("/api", () -> {
+            Spark.post("/preference", "application/json", preferencesController::createPref);
+            Spark.post("/payment", "application/json", paymentController::processPayment);
+
+        });
+
     }
 }
+

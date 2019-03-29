@@ -1,0 +1,173 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,shrink-to-fit=no')
+    title MercadoPago payflow example
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    link(rel='stylesheet', href='/custom.css')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.7.2/css/all.css', integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr', crossorigin='anonymous')
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
+    script(src='https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js' data-public-key='TEST-fa5a1cf8-301c-4f18-b212-8a9844120feb' data-transaction-amount='100.00')
+    script(src="/typed.custom.js")
+    script(async="true" type="text/javascript").
+       $(document).ready( function() {
+
+        $("#typed").typed({
+            strings: ["Hosting del mejor", "Paga con MercadoPago", "Animate papa!!"],
+            typeSpeed: 0,
+            backSpeed: 0,
+            smartBackspace: true, // this is a default
+            loop: true,
+        });
+       });
+
+
+section.pricing.py-5
+
+    .container
+        .row
+            .col-sm-12
+                .text-editor-wrap
+                    .title-bar
+                        span.title
+                            | typed.js — bash — 80x
+                            span.terminal-height 10
+                    .text-body
+                        | $
+                        span#typed
+                        span.typed-cursor
+        br
+        .row
+            // Free Tier
+            .col-lg-4
+                .card.mb-5.mb-lg-0
+                    .card-body
+                        h5.card-title.text-muted.text-uppercase.text-center Free
+                        h6.card-price.text-center
+                            | $0
+                            span.period /month
+                        hr
+                        ul.fa-ul
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Single User
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | 5GB Storage
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Unlimited Public Projects
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Community Access
+                            li.text-muted
+                                span.fa-li
+                                    i.fas.fa-times
+                                | Unlimited Private Projects
+                            li.text-muted
+                                span.fa-li
+                                    i.fas.fa-times
+                                | Dedicated Phone Support
+                            li.text-muted
+                                span.fa-li
+                                    i.fas.fa-times
+                                | Free Subdomain
+                            li.text-muted
+                                span.fa-li
+                                    i.fas.fa-times
+                                | Monthly Status Reports
+                        a.btn.btn-block.btn-primary.text-uppercase(href='/pref1.html') Buy Preference1
+            // Plus Tier
+            .col-lg-4
+                .card.mb-5.mb-lg-0
+                    .card-body
+                        h5.card-title.text-muted.text-uppercase.text-center Plus
+                        h6.card-price.text-center
+                            | $9
+                            span.period /month
+                        hr
+                        ul.fa-ul
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                strong 5 Users
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | 50GB Storage
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Unlimited Public Projects
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Community Access
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Unlimited Private Projects
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Dedicated Phone Support
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Free Subdomain
+                            li.text-muted
+                                span.fa-li
+                                    i.fas.fa-times
+                                | Monthly Status Reports
+                        a.btn.btn-block.btn-primary.text-uppercase(href='#') Buy Preference2
+            // Pro Tier
+            .col-lg-4
+                .card
+                    .card-body
+                        h5.card-title.text-muted.text-uppercase.text-center Pro
+                        h6.card-price.text-center
+                            | $49
+                            span.period /month
+                        hr
+                        ul.fa-ul
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                strong Unlimited Users
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | 150GB Storage
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Unlimited Public Projects
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Community Access
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Unlimited Private Projects
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Dedicated Phone Support
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                strong Unlimited
+                                |  Free Subdomains
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Monthly Status Reports
+                        a.btn.btn-block.btn-primary.text-uppercase(href='#') Buy Preference3
+

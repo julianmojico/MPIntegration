@@ -4,21 +4,21 @@ import com.google.gson.JsonElement;
 
 public class ApiMessage extends ApiResponse {
 
-    private short status;
+    private int status;
     private JsonElement content;
     private String objectType;
 
-    public ApiMessage(short status, JsonElement content, String objectType){
+    public ApiMessage(int status, JsonElement content, String objectType){
         this.status = status;
         this.content = content;
         this.objectType = objectType;
     }
 
-    public short getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(short status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -37,6 +37,5 @@ public class ApiMessage extends ApiResponse {
     public void setObjectType(String objectType) {
         this.objectType = objectType;
     }
-
 
 }

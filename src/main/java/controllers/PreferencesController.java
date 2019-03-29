@@ -6,15 +6,15 @@ import com.mercadopago.exceptions.MPValidationException;
 import com.mercadopago.resources.Preference;
 import models.ApiError;
 import models.ApiMessage;
+import models.ApiResponse;
 import org.apache.http.HttpStatus;
 import spark.Request;
 import spark.Response;
-import models.ApiResponse;
 
 
 public class PreferencesController {
 
-    private static Gson gson = new Gson();
+    private static final Gson gson = new Gson();
 
 
     /**
@@ -27,27 +27,31 @@ public class PreferencesController {
      */
     public String createPref(Request req, Response response) throws MPException {
 
-
+        ApiResponse apiResponse = null;
         response.type("application/json");
         Preference preference = gson.fromJson(req.body(), Preference.class);
         if (preference == null) {
-            return new ApiError(HttpStatus.SC_BAD_REQUEST, "Check JSON syntax and preferences attributes", "Could not parse request body").render();
+            apiResponse = new ApiError(HttpStatus.SC_BAD_REQUEST, "Check JSON syntax and preferences attributes", "Could not parse request body");
         }
         try {
             Preference savedPref = preference.save();
             int status = savedPref.getLastApiResponse().getStatusCode();
             response.status(status);
 
-            if (status != 201){
-                return new ApiError(status,savedPref.getLastApiResponse().getReasonPhrase(), savedPref.getLastApiResponse().getStringResponse()).render();
+            if (status != 201) {
+                apiResponse = new ApiError(status, savedPref.getLastApiResponse().getReasonPhrase(), savedPref.getLastApiResponse().getStringResponse());
             }
-            return new ApiMessage((short) status, savedPref.getLastApiResponse().getJsonElementResponse() , savedPref.getClass().getTypeName()).render();
+            apiResponse = new ApiMessage((short) status, savedPref.getLastApiResponse().getJsonElementResponse(), savedPref.getClass().getTypeName());
 
         } catch (MPValidationException mpe) {
-            return new ApiError().buildValidationError(response, mpe).render();
+            apiResponse = new ApiError().buildValidationError(response, mpe);
         } catch (Exception e) {
-            return new ApiError().buildGeneralError(response, e).render();
+            apiResponse = new ApiError().buildGeneralError(response, e);
 
+        } finally {
+            //TODO: DISCUSION, ME CONVIENE PASAR A JSON CON EL SINGLETON O CON EL METODO DE APIRESPONSE?
+//           return JsonUtils.objectToJson(apiResponse);
+            return apiResponse.render();
         }
     }
 
