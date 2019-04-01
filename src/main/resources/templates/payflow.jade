@@ -82,7 +82,7 @@ section.pricing.py-5
                                 span.fa-li
                                     i.fas.fa-times
                                 | Monthly Status Reports
-                        a.btn.btn-block.btn-primary.text-uppercase(href='/pref1.html') Buy Preference1
+                        a.btn.btn-block.btn-primary.text-uppercase(href='/pref1.html') Buy Using Custom Checkout
             // Plus Tier
             .col-lg-4
                 .card.mb-5.mb-lg-0
@@ -125,7 +125,11 @@ section.pricing.py-5
                                 span.fa-li
                                     i.fas.fa-times
                                 | Monthly Status Reports
-                        a.btn.btn-block.btn-primary.text-uppercase(href='#') Buy Preference2
+                        form(action='/api/payment' method='POST')
+                            input(type="hidden" name="itemId" value="3")
+                            //input(type='number')
+                            script(src='https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js' data-public-key='TEST-fa5a1cf8-301c-4f18-b212-8a9844120feb')
+
             // Pro Tier
             .col-lg-4
                 .card
@@ -169,5 +173,52 @@ section.pricing.py-5
                                 span.fa-li
                                     i.fas.fa-check
                                 | Monthly Status Reports
-                        a.btn.btn-block.btn-primary.text-uppercase(href='#') Buy Preference3
+                        //a.btn.btn-block.btn-primary.text-uppercase(href='#') Boton de Pago
+                        a.blue-ar-l-rn-none(mp-mode='dftl', href='https://www.mercadopago.com/mla/checkout/start?pref_id=77725206-100eecea-91b3-4692-b505-c13111e96f49', name='MP-payButton') Boton de pago
+                            script(type='text/javascript').
+                              (function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = document.location.protocol+"//secure.mlstatic.com/mptools/render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}window.$MPC_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();
+            .col-lg-4
+                .card
+                    .card-body
+                        h5.card-title.text-muted.text-uppercase.text-center Pro
+                        h6.card-price.text-center
+                            | $49
+                            span.period /month
+                        hr
+                        ul.fa-ul
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                strong Unlimited Users
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | 150GB Storage
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Unlimited Public Projects
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Community Access
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Unlimited Private Projects
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Dedicated Phone Support
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                strong Unlimited
+                                |  Free Subdomains
+                            li
+                                span.fa-li
+                                    i.fas.fa-check
+                                | Monthly Status Reports
+                        a.btn.btn-block.btn-primary.text-uppercase(href='https://www.mercadopago.com/mla/checkout/start?pref_id=77725206-100eecea-91b3-4692-b505-c13111e96f49') Link de Pago
+
 

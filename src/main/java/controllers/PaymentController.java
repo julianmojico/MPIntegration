@@ -60,11 +60,11 @@ public class PaymentController {
             body = new ApiError(HttpStatus.SC_INTERNAL_SERVER_ERROR, "Internal Server error processing the request", e.getClass().toString());
         } finally {
             response.body(JsonUtils.objectToJson(body));
-            //response.body(body.render());
             return body.render();
         }
     }
 
+    /*Serialize Payment object from both JSON or Form encoding*/
     public PaymentDTO parsePayment(Request request) {
 
         PaymentDTO paymentDTO;

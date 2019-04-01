@@ -50,7 +50,6 @@ public class PreferencesController {
 
         } finally {
             //TODO: DISCUSION, ME CONVIENE PASAR A JSON CON EL SINGLETON O CON EL METODO DE APIRESPONSE?
-//           return JsonUtils.objectToJson(apiResponse);
             return apiResponse.render();
         }
     }

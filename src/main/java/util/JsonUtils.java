@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import spark.Request;
 
 import java.util.HashMap;
@@ -22,11 +23,16 @@ public class JsonUtils {
     private static final Gson gson = new Gson();
 
 
+    public static Gson getGson(){
+        return gson;
+    }
     public static String objectToJson(Object model) {
         return gson.toJson(model);
     }
 
-
+    public static  JsonElement objectToJsonElement(Object object){
+        return gson.toJsonTree(object);
+    }
     public static Map<String, Object> requestToMap(Request r) throws Exception {
         String body = r.body();
         if (body.length() == 0) {

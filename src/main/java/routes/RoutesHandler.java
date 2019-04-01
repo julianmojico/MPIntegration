@@ -1,6 +1,5 @@
 package routes;
 
-import configurations.JsonTransformer;
 import controllers.PaymentController;
 import controllers.PreferencesController;
 import controllers.ViewController;
@@ -12,8 +11,6 @@ import static spark.Spark.path;
 
 public class RoutesHandler implements RouteGroup {
 
-    JsonTransformer jsonTransformer = new JsonTransformer();
-    //TODO: Make singleton
     PreferencesController preferencesController = new PreferencesController();
     ViewController viewController = ViewController.getInstance();
     PaymentController paymentController = PaymentController.getInstance();
@@ -21,12 +18,11 @@ public class RoutesHandler implements RouteGroup {
     @Override
     public void addRoutes() {
 
+
+        Spark.get("/", viewController::payflow, new JadeTemplateEngine());
+
         path("/front", () -> {
-            Spark.get("/mpflow", viewController::handle, new JadeTemplateEngine());
-            Spark.get("/payflow", viewController::payflow, new JadeTemplateEngine());
             Spark.post("/payment", viewController::doPayment, new JadeTemplateEngine());
-//            Spark.get("/mpflow", viewController::handle);
-//            Spark.get("/payflow", viewController::payflow);
 
         });
 
