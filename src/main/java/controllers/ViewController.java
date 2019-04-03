@@ -32,7 +32,6 @@ public class ViewController implements TemplateViewRoute  {
 
         String body = paymentController.processPayment(request,response);
         HashMap<String,Object> map = new HashMap<>();
-            //map = JsonUtils.mapper.readValue(body,HashMap.class);ç
             map.put("response",body);
 
         return new ModelAndView(map,"responserender");

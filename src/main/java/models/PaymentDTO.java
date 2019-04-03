@@ -1,7 +1,5 @@
 package models;
 
-import com.google.gson.JsonSyntaxException;
-
 public class PaymentDTO {
 
     private String token;
@@ -60,18 +58,6 @@ public class PaymentDTO {
 
     public void setInstallments(Integer installments) {
         this.installments = installments;
-    }
-
-    public boolean isValidPayment() throws JsonSyntaxException {
-
-        if (email instanceof String && !email.isEmpty() && description instanceof String && amount>0.0f
-                    && !description.isEmpty()
-            ) {
-                return true;
-            }
-         else {
-            throw new JsonSyntaxException("Payment fields missing or wrong. Amount must be positive, payer email and description not null.");
-        }
     }
 
     public String getEmail() {

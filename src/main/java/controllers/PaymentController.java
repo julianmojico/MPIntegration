@@ -32,10 +32,12 @@ public class PaymentController {
     public String processPayment(Request request, Response response) {
 
         ApiResponse body = null;
+        if (request.contentType() == "application/json"){
+            response.type("application/json");
+        }
 
         try {
             PaymentDTO paymentDTO = parsePayment(request);
-            paymentDTO.isValidPayment();
             Payment payment = mpService.createCardPayment(paymentDTO);
             mpService.submitPayment(payment);
             int status = payment.getLastApiResponse().getStatusCode();
@@ -43,12 +45,10 @@ public class PaymentController {
 
             if (status != 200 && status != 201) {
                 body = new ApiError(status, payment.getLastApiResponse().getJsonElementResponse(), payment.getLastApiResponse().getReasonPhrase());
+            } else {
+                //success
+                body = new ApiMessage(status, gson.toJsonTree(payment), Payment.class.getTypeName());
             }
-
-            //success
-
-            body = new ApiMessage(status, gson.toJsonTree(payment), Payment.class.getTypeName());
-
         } catch (MPException mpe) {
             System.out.println(mpe.getStackTrace());
             body = new ApiError(HttpStatus.SC_BAD_GATEWAY, "MP API failed to process the request", mpe.toString());
