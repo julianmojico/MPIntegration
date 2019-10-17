@@ -6,7 +6,7 @@ Checkout types: Redirect, widget, iframe, custom checkout
 ### Instructions
 1. Import as regular gradle project
 2. Run Main.class as Java Application
-3. Navigate to http://localhost:8080/
+3. Navigate to http://localhost/
 
 ### Routes
 / -> Landing site where different custom payments can be found

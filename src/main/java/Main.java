@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        port(8080);
+        port(80);
         Spark.staticFiles.location("/public");
 
         try {
