@@ -1,5 +1,7 @@
 # MPIntegration
-Custom Web Checkout integration using MercadoPago APIs
+Custom Web Checkout integration using MercadoPago APIs.
+Static frontend + Java Spark framework, which uses Jetty container.
+Checkout types: Redirect, widget, iframe, custom checkout
 
 ### Instructions
 1. Import as regular gradle project
@@ -24,3 +26,15 @@ Custom Web Checkout integration using MercadoPago APIs
 	"paymentTypeId":"credit_card"
 }
 ```
+#### Files description
+- **pref1.html** =  static html used for custom checkout
+- **payflow.jade** = template used for landing which shows multiple products and checkouts. Here you can setup the preferenceId.
+- **responserenderer.jade** = template used to show Payments API response after payment is done.
+- **main.js** = contains js functions to process custom checkout payment (card tokenization, sdkhandling in general). This also contains MercadoPago's API key.
+
+#### Routes
+RoutesHandler.java = Defines controller's routes
+
+- **POST** */api/preference* = Preference creation
+- **POST** */api/payment* = General Payment processing
+- **POST** */front/payment* = Frontend Payment processing
