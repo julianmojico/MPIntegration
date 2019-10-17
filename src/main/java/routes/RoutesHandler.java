@@ -19,10 +19,12 @@ public class RoutesHandler implements RouteGroup {
     public void addRoutes() {
 
 
-        Spark.get("/", viewController::payflow, new JadeTemplateEngine());
+        Spark.get("/products", viewController::payflow, new JadeTemplateEngine());
+
+        Spark.get("/", viewController::renderMarketplace);
 
         path("/front", () -> {
-            Spark.post("/payment", viewController::doPayment, new JadeTemplateEngine());
+            Spark.post("/payment", viewController::doPayment,new JadeTemplateEngine());
 
         });
 
