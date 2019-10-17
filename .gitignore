@@ -2,7 +2,6 @@
 ##idea
 *.iml
 *.iws
-MPIntegration.iws
 
 # Compiled source #
 ###################
@@ -21,7 +20,7 @@ MPIntegration.iws
 *.dmg
 *.gz
 *.iso
-#*.jar
+*.jar
 *.rar
 *.tar
 *.zip
