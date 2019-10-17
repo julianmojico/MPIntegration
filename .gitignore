@@ -1,3 +1,9 @@
+
+##idea
+*.iml
+*.iws
+MPIntegration.iws
+
 # Compiled source #
 ###################
 *.com
