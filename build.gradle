@@ -28,3 +28,6 @@ jar {
         attributes 'Main-Class': 'com.agilisys.mpintegration.Main'
     }
 }
+
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
