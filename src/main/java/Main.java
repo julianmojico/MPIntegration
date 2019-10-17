@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        port(8080);
+        port(getHerokuAssignedPort());
         Spark.staticFiles.location("/public");
 
         try {
@@ -24,6 +24,7 @@ public class Main {
         routesHandler.addRoutes();
 
 
+
         //DefaultHandlers.setupRoutes();
 
 
@@ -31,4 +32,13 @@ public class Main {
         //redirect.get("/", "https://www.mercadopago.com/mla/checkout/start?pref_id=77725206-100eecea-91b3-4692-b505-c13111e96f49");
 
     }
+
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 8080; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
+
 }
