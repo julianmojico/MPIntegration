@@ -1,5 +1,7 @@
 # MPIntegration
-Custom Web Checkout integration using MercadoPago APIs
+Custom Web Checkout integration using MercadoPago APIs.
+Static frontend + Java Spark framework, which uses Jetty container.
+Checkout types: Redirect, widget, iframe, custom checkout
 
 ### Routes
 / -> Landing site where different custom payments can be found
@@ -23,3 +25,16 @@ Custom Web Checkout integration using MercadoPago APIs
 
 #### Navigate to webapp
 http://localhost:8080/
+
+#### Files description
+pref1.html =  static html used for custom checkout
+payflow.jade = template used for landing which shows multiple products and checkouts
+responserenderer.jade = template used to show Payments API response after payment is done.
+main.js = contains js functions to process custom checkout payment (card tokenization, sdkhandling in general). This also contains preferenceId
+
+#### Routes
+RoutesHandler.java = Defines controller's routes
+
+POST */api/preference* = Preference creation
+POST */api/payment* = Payment processing
+
