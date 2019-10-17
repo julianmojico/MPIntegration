@@ -9,13 +9,13 @@ head
     script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
-    script(src='https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js' data-public-key='TEST-fa5a1cf8-301c-4f18-b212-8a9844120feb' data-transaction-amount='100.00')
+    script(src='https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js' data-public-key='TEST-f4dae8c9-bfe8-49f1-b8c8-f0e8c6da5a28' data-transaction-amount='100.00')
     script(src="/typed.custom.js")
     script(async="true" type="text/javascript").
        $(document).ready( function() {
 
         $("#typed").typed({
-            strings: ["Hosting del mejor", "Paga con MercadoPago", "Animate papa!!"],
+            strings: ["El mejor hosting", "Paga con MercadoPago", "Oferta por tiempo limitado!"],
             typeSpeed: 0,
             backSpeed: 0,
             smartBackspace: true, // this is a default
@@ -128,7 +128,7 @@ section.pricing.py-5
                         form(action='/api/payment' method='POST')
                             input(type="hidden" name="itemId" value="3")
                             //input(type='number')
-                            script(src='https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js' data-public-key='TEST-fa5a1cf8-301c-4f18-b212-8a9844120feb')
+                            script(src='https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js' data-public-key='TEST-f4dae8c9-bfe8-49f1-b8c8-f0e8c6da5a28')
 
             // Pro Tier
             .col-lg-4

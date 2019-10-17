@@ -95,7 +95,7 @@ function setInstallmentInfo(status, response) {
 
 $(document).ready(function () {
 
-    Mercadopago.setPublishableKey("TEST-a1f4188c-7cf1-401f-a6a9-1bc26a692118");
+    Mercadopago.setPublishableKey("TEST-f4dae8c9-bfe8-49f1-b8c8-f0e8c6da5a28");
     Mercadopago.getIdentificationTypes();
     fillForm();
     $('#cardNumber').change(guessingPaymentMethod);

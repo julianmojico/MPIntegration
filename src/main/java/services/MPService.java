@@ -48,7 +48,7 @@ public class MPService {
     }
 
     public static void configCustomCheckout() throws MPException  {
-        MercadoPago.SDK.setAccessToken("TEST-1623876840559160-032611-4ac39bb37585d10193666c384a4a0ee6-420008877");
+        MercadoPago.SDK.setAccessToken("TEST-5595646364578069-040415-c03000222bc5d69bf6d4200375936fa6-77725206");
     }
 
 }
