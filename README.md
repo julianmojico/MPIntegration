@@ -28,9 +28,9 @@ http://localhost:8080/
 
 #### Files description
 - **pref1.html** =  static html used for custom checkout
-- **payflow.jade** = template used for landing which shows multiple products and checkouts
+- **payflow.jade** = template used for landing which shows multiple products and checkouts. Here you can setup the preferenceId.
 - **responserenderer.jade** = template used to show Payments API response after payment is done.
-- **main.js** = contains js functions to process custom checkout payment (card tokenization, sdkhandling in general). This also contains preferenceId
+- **main.js** = contains js functions to process custom checkout payment (card tokenization, sdkhandling in general). This also contains MercadoPago's API key.
 
 #### Routes
 RoutesHandler.java = Defines controller's routes
