@@ -38,6 +38,10 @@ Thumbs.db
 
 #Directories
 /build
-./gradle
+.gradle
 /out
 /.idea
+
+###idea
+*.iws
+*.iml

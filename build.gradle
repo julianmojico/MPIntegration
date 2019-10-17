@@ -31,3 +31,8 @@ jar {
 
 task stage(dependsOn: ['build', 'clean'])
 build.mustRunAfter clean
+
+task run(type:JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'Main'
+}
