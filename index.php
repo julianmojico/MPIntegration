@@ -1,1 +1,1 @@
-  <?php header("Location: anotherDirectory/anotherFile.php"); ?>
+  <?php header("Location: /"); ?>
