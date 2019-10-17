@@ -6,7 +6,6 @@
       <module name="mpintegration_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>

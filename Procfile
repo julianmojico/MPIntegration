@@ -1,1 +1,0 @@
-gradlerun: gradlew stage run

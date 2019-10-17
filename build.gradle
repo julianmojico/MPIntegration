@@ -36,3 +36,4 @@ task run(type:JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = 'Main'
 }
+run.mustRunAfter stage
