@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
-      <module name="mpintegration_main" target="1.8" />
-      <module name="mpintegration_test" target="1.8" />
-    </bytecodeTargetLevel>
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="C:/Gradle/gradle-5.5.1" />
         <option name="modules">
@@ -17,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
           </set>
         </option>
+        <option name="resolveModulePerSourceSet" value="false" />
         <option name="useAutoImport" value="true" />
       </GradleProjectSettings>
     </option>
@@ -30,15 +26,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MPIntegration.iml" filepath="$PROJECT_DIR$/MPIntegration.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mpintegration_main.iml" filepath="$PROJECT_DIR$/mpintegration_main.iml" group="mpintegration" />
-      <module fileurl="file://$PROJECT_DIR$/mpintegration_test.iml" filepath="$PROJECT_DIR$/mpintegration_test.iml" group="mpintegration" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/classes" />
+    <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
   <component name="libraryTable">
     <library name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0">

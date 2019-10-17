@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        port(getHerokuAssignedPort());
+        port(getAssignedPort());
         Spark.staticFiles.location("/public");
 
         try {
@@ -33,7 +33,7 @@ public class Main {
 
     }
 
-    static int getHerokuAssignedPort() {
+    static int getAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
         if (processBuilder.environment().get("PORT") != null) {
             return Integer.parseInt(processBuilder.environment().get("PORT"));

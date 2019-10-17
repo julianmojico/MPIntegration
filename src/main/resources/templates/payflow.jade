@@ -12,16 +12,16 @@ head
     script(src='https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js' data-public-key='TEST-f4dae8c9-bfe8-49f1-b8c8-f0e8c6da5a28' data-transaction-amount='100.00')
     script(src="/typed.custom.js")
     script(async="true" type="text/javascript").
-       $(document).ready( function() {
+        $(document).ready( function() {
 
-        $("#typed").typed({
-            strings: ["El mejor hosting", "Paga con MercadoPago", "Oferta por tiempo limitado!"],
-            typeSpeed: 0,
-            backSpeed: 0,
-            smartBackspace: true, // this is a default
-            loop: true,
+            $("#typed").typed({
+                strings: ["El mejor hosting", "Paga con MercadoPago", "Oferta por tiempo limitado!"],
+                typeSpeed: 0,
+                backSpeed: 0,
+                smartBackspace: true, // this is a default
+                loop: true,
+            });
         });
-       });
 
 
 section.pricing.py-5
@@ -176,7 +176,7 @@ section.pricing.py-5
                         //a.btn.btn-block.btn-primary.text-uppercase(href='#') Boton de Pago
                         a.blue-ar-l-rn-none(mp-mode='dftl', href='https://www.mercadopago.com/mla/checkout/start?pref_id=77725206-100eecea-91b3-4692-b505-c13111e96f49', name='MP-payButton') Boton de pago
                             script(type='text/javascript').
-                              (function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = document.location.protocol+"//secure.mlstatic.com/mptools/render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}window.$MPC_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();
+                                (function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = document.location.protocol+"//secure.mlstatic.com/mptools/render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}window.$MPC_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();
             .col-lg-4
                 .card
                     .card-body
