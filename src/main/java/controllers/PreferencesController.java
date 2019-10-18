@@ -49,7 +49,7 @@ public class PreferencesController {
             apiResponse = new ApiError().buildGeneralError(response, e);
 
         } finally {
-            //TODO: DISCUSION, ME CONVIENE PASAR A JSON CON EL SINGLETON O CON EL METODO DE APIRESPONSE?
+            //TODO: CONVIENE PASAR A JSON CON EL SINGLETON O CON EL METODO DE APIRESPONSE?
             return apiResponse.render();
         }
     }
